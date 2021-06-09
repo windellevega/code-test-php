@@ -4,19 +4,22 @@
     <div class="container">
     <div class="row" style="margin:10px 0;">
         <div class="col-md-6">
-            <div class="input-group">
-                <h5 style="margin: 8px 10px 0 0">Search by:</h5>
-                <select class="form-select" id="search-by">
-                    <option selected>Title</option>
-                    <option value="1">ISBN</option>
-                    <option value="2">Author</option>
-                    <option value="3">Publisher</option>
-                    <option value="3">Year Published</option>
-                    <option value="3">Category</option>
-                </select>
-                <input type="text" class="form-control" style="width: 150px" aria-label="Text input with dropdown button">
-                <button class="btn btn-outline-primary" type="button">Search</button>
-            </div>
+            <form action="{{ route('books.index') }}" method="GET">
+                <div class="input-group">
+                    <h5 style="margin: 8px 10px 0 0">Search by:</h5>
+                    <select class="form-select" name="search_by">
+                        <option selected value="1">Title</option>
+                        <option value="2">ISBN</option>
+                        <option value="3">Author</option>
+                        <option value="4">Publisher</option>
+                        <option value="5">Year Published</option>
+                        <option value="6">Category</option>
+                    </select>
+                    <input type="text" class="form-control" style="width: 150px" name="keyword">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+
+                </div>
+            </form>
         </div>
         <div class="col-md-4">
 
