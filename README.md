@@ -28,3 +28,13 @@ Using HTML, CSS, PHP and MySQL, create books website with the following function
 - (*) Are Optional but a PLUS
 - You can use the bootstrap library stored in this folder to help you for your frontend designs.
 - Feel free to show off your different approach.
+
+
+## Project Setup
+1. After cloning the repository, create a `.env` file using `.env.example`
+2. Run `composer install`
+3. Create database and save the database name and credentials on your `.env` file
+4. Run `php artisan key:generate` to generate application keys
+5. Run `php artisan migrate` to migrate the tables to your database
+6. Run `php artisan db:seed` to pre-load the database with some data
+7. Serve the API `php artisan serve`
