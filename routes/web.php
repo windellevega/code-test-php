@@ -22,5 +22,3 @@ Route::put('books/{book}', [BookController::class, 'update'])
     ->name('books.update');
 Route::delete('books/{book}', [BookController::class, 'destroy'])
     ->name('books.destroy');
-Route::get('books/search', [BookController::class, 'search'])
-    ->name('books.search');

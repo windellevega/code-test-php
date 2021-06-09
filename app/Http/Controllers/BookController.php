@@ -67,54 +67,6 @@ class BookController extends Controller
         return view('books.index', compact('books', 'categories'));
     }
 
-    public function search(Request $request)
-    {
-        $books = null;
-
-        switch($request->search_by) {
-            case 1:
-                $books = Book::with('category')
-                            ->where('title', 'like', '%' . $request->keyword . '%')
-                            ->latest()
-                            ->paginate(10);
-                break;
-            case 2:
-                $books = Book::with('category')
-                            ->where('isbn', 'like', '%' . $request->keyword . '%')
-                            ->latest()
-                            ->paginate(10);
-                break;
-            case 3:
-                $books = Book::with('category')
-                            ->where('author', 'like', '%' . $request->keyword . '%')
-                            ->latest()
-                            ->paginate(10);
-                break;
-            case 4:
-                $books = Book::with('category')
-                            ->where('publisher', 'like', '%' . $request->keyword . '%')
-                            ->latest()
-                            ->paginate(10);
-                break;
-            case 5:
-                $books = Book::with('category')
-                            ->where('year_published', $request->keyword)
-                            ->latest()
-                            ->paginate(10);
-                break;
-            case 6:
-                $books = Book::with('category')
-                            ->where('title', 'like', '%' . $request->keyword . '%')
-                            ->latest()
-                            ->paginate(10);
-                break;
-        }
-
-        $categories = Category::all();
-
-        return view('books.index', compact('books', 'categories'));
-    }
-
     /**
      * Store a newly created resource in storage.
      *

@@ -7,7 +7,7 @@
             <form action="{{ route('books.index') }}" method="GET">
                 <div class="input-group">
                     <h5 style="margin: 8px 10px 0 0">Search by:</h5>
-                    <select class="form-select" name="search_by">
+                    <select class="form-select" name="search_by" value="{{ old('search_by') }}">
                         <option selected value="1">Title</option>
                         <option value="2">ISBN</option>
                         <option value="3">Author</option>
